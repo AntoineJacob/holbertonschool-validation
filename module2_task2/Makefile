@@ -15,5 +15,7 @@ test: ## To test it to ensure that it behaves as expected
 	curl http://localhost:9999/health
 lint: ## lint the source code
 	golangci-lint run
+unit-tests:	## Unit-tests:
+	go test -v -short -coverprofile=coverage-units.out
 help: ## Show this help
 	@fgrep -h "##" $(MAKEFILE_LIST) | fgrep -v fgrep | sed -e 's/\\$$//' | sed -e 's/##//'
