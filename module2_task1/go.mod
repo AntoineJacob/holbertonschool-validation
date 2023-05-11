@@ -1,4 +1,4 @@
-module github.com/simonrichard-dev/awesome-api
+module github.com/AntoineJacob
 
 go 1.15
 
