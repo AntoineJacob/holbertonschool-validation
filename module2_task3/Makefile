@@ -10,9 +10,10 @@ stop: ## Stop the application with the command kill
 clean: ## Stop the application. Delete the binary and the log file
 	pkill awesome-api || true
 	rm awesome-api awesome-api.log || true
+	rm coverage-units.out coverage-integrations.out || true
 test: ## To test it to ensure that it behaves as expected
-	curl http://localhost:9999
-	curl http://localhost:9999/health
+	go test -v -short -coverprofile=coverage-units.out
+	go test -v -coverprofile=coverage-integrations.out
 lint: ## lint the source code
 	golangci-lint run
 unit-tests:	## Unit-tests:
