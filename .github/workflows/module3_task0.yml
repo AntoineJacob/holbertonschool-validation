@@ -19,4 +19,3 @@ jobs:
 
       - name: "Run make help"  # Execute the command make help
         run: cd module3_task0 && make help
-        
