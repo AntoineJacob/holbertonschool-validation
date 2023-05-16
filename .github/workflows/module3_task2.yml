@@ -1,32 +1,38 @@
+---
 name: module3_task2
-run-name: module3_task2
-on:
-  schedule:
-    - cron: "0 15 * * *"
+# Events that trigger workflows
+on:  # yamllint disable-line rule:truthy
   push:
+    branches:
+      - main
+  schedule:
+    - cron: '0 0 * * *'
+
 jobs:
-  first_job:
-    defaults:
-      run:
-        working-directory: ./${{ github.workflow }}
+  build:
+
     runs-on: ubuntu-22.04
+
     steps:
-      - name: Clone the repo
+      - name: "Checkout"  # Download code from the repository
         uses: actions/checkout@v3
-      - name: install missing tools for building
-        run: ./setup.sh
-      - name: Build the hugo website via the target build.
-        run: make build
-      - name: Integration tests
+
+      - name: "Run bash script"
+        run: cd module3_task2 && ./setup.sh
+
+      - name: "Run make build"  # Execute the command make build
+        run: cd module3_task2 && make build
+
+      - name: "Testing"
         run: |
-          make validate
+          cd module3_task2 && make validate
           make integration-tests
           make unit-tests
           make package
           make clean
-      - name: archive build
-        if: ${{ success()}}
+
+      - name: "archive build"
         uses: actions/upload-artifact@v3
         with:
-          name: upload-package
+          name: "upload package"
           path: module3_task2/awesome-website.zip
