@@ -1,4 +1,4 @@
-module github.com/AntoineJacob
+module github.com/Lestt/awesome-api
 
 go 1.20
 

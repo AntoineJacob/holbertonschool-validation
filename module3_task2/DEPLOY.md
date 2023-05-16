@@ -16,7 +16,7 @@ To run the application use:
 
 ## How to customise where the logs are written
 
-to be determined
+TBC
 
 ## How to quickly check the application is running
 
