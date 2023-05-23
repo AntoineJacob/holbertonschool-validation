@@ -5,7 +5,7 @@ MAKE=make
 COVERAGE=coverage
 HUGO=hugo
 
-build:	## Generate the source code of the application to a binary.
+build:	## Generate the source code of the application to a binary..
 	$(MAKE) lint
 	$(GO) mod tidy
 	$(MAKE) check && $(HUGO) && $(GO) build -o $(TARGET)
