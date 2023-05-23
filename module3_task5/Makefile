@@ -20,7 +20,7 @@ post:	## Create a new blog post whose filename and title come from the environme
 stop:	## Stop the application.
 	@pkill $(TARGET)
 
-clean:	## Stop the application. Delete the binary and the log file.
+clean:	## Stop the application. Delete the binary and the log file
 	@if pgrep -x $(TARGET) > /dev/null; then \
 		pkill $(TARGET); \
 	fi
