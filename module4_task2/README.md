@@ -8,7 +8,7 @@
 
 - stop: Stop the application with the command kill XXXXX where XXXXX is the Process ID of the application. For instance: kill "$(pgrep awesome-api)".
 
-- post: Create a new blog post whose filename and title come from the environment variables POST_TITLE and POST_NAME
+- post: Create a new blog post whose filename and title com from the environment variables POST_TITLE and POST_NAME
 
 - clean: Stop the application. Delete the binary awesome-api and the log file awesome-api.log
 
