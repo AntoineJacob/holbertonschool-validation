@@ -24,10 +24,10 @@
 
 - validate: Validate the file dist/index.html using the command line Holberton’s W3C Validator.
 
-- help: Display help message.
+- package: creates a zip archive of the the latest build and stores it under awesome-website.zip
 
-## Workflow
--  The original workflow file <...>/.github/workflows/module3_task0.yml must be:
-   -  Present with a valid YAML syntax
-   -  It must be a valid GitHub action workflow with 1 job and 1 steps
-   -  It must be have 2 triggers
+- build-docker: build docker image for testing.
+
+- docker-tests: testing the container built.
+
+- help: Display help message.
