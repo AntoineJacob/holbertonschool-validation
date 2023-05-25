@@ -1,4 +1,4 @@
-FROM golang:1.15.8-alpine
+FROM golang:1.15.8-buster
 
 ENV PATH="/usr/local/go/bin:/opt/W3C-Validator:${PATH}"
 
